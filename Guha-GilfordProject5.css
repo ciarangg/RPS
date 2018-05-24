@@ -1,0 +1,40 @@
+*{
+    background-color: green
+}
+
+.red {
+    border-style: groove;
+    border-collapse: collapse;
+    border-width: 6px;
+    border-color: brown;
+    background-color: white;
+    font-size: 120%;
+    color: green;
+    padding-top: 8px;
+    padding-bottom: 8px
+}
+
+table#center {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%
+}
+
+#winNumber{
+    color:black;
+    background-color: white
+}
+
+#loseNumber{
+    color:black;
+    background-color: white
+}
+#tieNumber{
+    color:black;
+    background-color: white
+}
+#statistics{
+    color: black;
+    background-color: white
+}

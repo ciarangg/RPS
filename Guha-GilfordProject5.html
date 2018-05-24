@@ -1,0 +1,174 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title> Rock Paper Scissors </title>
+        <link href="Guha-GilfordProject5.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <table class="red" id="center">
+            <tr class="red">
+                <th class="red" colspan="3"> Rock Paper Scissors </th>
+            </tr>
+            <tr>
+                <td class="red"> <img id="rock" src="Project5/rock.jpg" alt="Rock" title="Rock" onclick="choice('Rrock')" /></td>
+                <td class="red" rowspan="3"> <img id="righthand" onclick="righthand" /> </td>
+                <td class="red" rowspan="3"> <img id="lefthand" onclick="lefthand" />  </td>
+            </tr>
+            <tr>
+                <td class="red"> <img id="paper" src="Project5/paper.jpg" alt="Paper" title="Paper" onclick="choice('Rpaper')" /></td>
+            </tr>
+            <tr>
+                <td class="red"> <img id="scissors" src="Project5/scissors.jpg" alt="Scissors" title="Scissors" onclick="choice('Rscissors')" /></td>
+            </tr>
+            <tr>
+                <th class="red" colspan="3">
+                    Wins:<span id="winNumber">0</span> Losses: <span id="loseNumber">0</span> Ties: <span id="tieNumber">0</span>
+                    <br />
+                    Number of rounds played: <span id="statistics">0</span>
+                </th>
+            </tr>
+            
+        </table>
+        <script type="text/javascript">
+            
+            
+            var wins=0
+            var losses=0
+            var ties=0
+            var rounds=0
+            
+            
+            
+            
+            
+            function stuff (p) {
+                if (p=="win") {
+                    wins=wins+1
+                    
+                    winNumber.innerHTML = wins
+                    
+                }
+                else if (p=="lose") {
+                    losses=losses+1
+                    
+                    loseNumber.innerHTML = losses
+                }
+                else if (p=="tie") {
+                    ties=ties+1
+                    
+                    tieNumber.innerHTML = ties
+                    
+                }
+                
+                rounds= wins + ties + losses
+                
+                statistics.innerHTML = rounds 
+                
+                
+            }
+                
+                
+            function status (u, c) {
+                if (u=="Rrock" && c=="rock") {
+                
+                    return("tie")
+                }
+                else if (u=="Rrock" && c=="paper") {
+                
+                    return("lose")
+                }
+                else if (u=="Rrock" && c=="scissors") {
+                
+                    return("win")
+                }
+                else if (u=="Rpaper" && c=="rock") {
+                
+                    return("win")
+                }
+                else if (u=="Rpaper" && c=="paper") {
+                
+                    return("tie")
+                }
+                else if (u=="Rpaper" && c=="scissors") {
+                
+                    return("lose")
+                }
+                else if (u=="Rscissors" && c=="rock") {
+                
+                    return("lose")
+                }
+                else if (u=="Rscissors" && c=="paper") {
+                
+                    return("win")
+                }
+                else if (u=="Rscissors" && c=="scissors") {
+                
+                    return("tie")
+                }
+                
+                return "failed"
+            }
+                
+    
+                
+                
+            
+            
+            
+            
+            righthand.src= "Project5/leftPaperHand.jpg"
+            lefthand.src= "Project5/rightRockHand.jpg"
+        
+            function choice (a) {
+                
+                var computerChoice= Math.random()
+                
+                if (a=='Rrock') {
+                
+                    righthand.src= "Project5/leftRockHand.jpg"
+                
+                }
+                    
+                else if (a=='Rpaper') {
+                
+                    righthand.src= "Project5/leftPaperHand.jpg"
+                
+                }
+                else if (a=='Rscissors') {
+                
+                    righthand.src= "Project5/leftScissorHand.jpg"
+                }
+                
+                if (computerChoice >=0 & computerChoice <0.33)  {
+                    lefthand.src= "Project5/rightRockHand.jpg"
+                    computerChoice="rock"
+                }
+                else if (computerChoice >=0.33 & computerChoice <0.66) {
+                    lefthand.src= "Project5/rightPaperHand.jpg"
+                    computerChoice="paper"
+                }
+                else {
+                    lefthand.src= "Project5/rightScissorHand.jpg"
+                    computerChoice="scissors"
+                }
+                
+                
+                var p = status(a, computerChoice)
+                stuff(p)
+                
+                
+                
+                
+            }
+            
+
+            
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
