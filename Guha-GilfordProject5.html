@@ -32,91 +32,74 @@
         </table>
         <script type="text/javascript">
             
-            
             var wins=0
             var losses=0
             var ties=0
             var rounds=0
-            
-            
-            
-            
-            
+           
             function stuff (p) {
+                
                 if (p=="win") {
                     wins=wins+1
-                    
                     winNumber.innerHTML = wins
-                    
                 }
+                
                 else if (p=="lose") {
                     losses=losses+1
-                    
                     loseNumber.innerHTML = losses
                 }
+                
                 else if (p=="tie") {
                     ties=ties+1
-                    
                     tieNumber.innerHTML = ties
-                    
                 }
                 
                 rounds= wins + ties + losses
-                
                 statistics.innerHTML = rounds 
-                
-                
             }
                 
                 
             function status (u, c) {
+                
                 if (u=="Rrock" && c=="rock") {
-                
                     return("tie")
                 }
+                
                 else if (u=="Rrock" && c=="paper") {
-                
                     return("lose")
                 }
+                
                 else if (u=="Rrock" && c=="scissors") {
-                
                     return("win")
                 }
+                
                 else if (u=="Rpaper" && c=="rock") {
-                
                     return("win")
                 }
-                else if (u=="Rpaper" && c=="paper") {
                 
+                else if (u=="Rpaper" && c=="paper") {
                     return("tie")
                 }
+                
                 else if (u=="Rpaper" && c=="scissors") {
-                
                     return("lose")
                 }
+                
                 else if (u=="Rscissors" && c=="rock") {
-                
                     return("lose")
                 }
-                else if (u=="Rscissors" && c=="paper") {
                 
+                else if (u=="Rscissors" && c=="paper") {
                     return("win")
                 }
-                else if (u=="Rscissors" && c=="scissors") {
                 
+                else if (u=="Rscissors" && c=="scissors") {
                     return("tie")
                 }
                 
                 return "failed"
             }
-                
-    
-                
-                
-            
-            
-            
-            
+
             righthand.src= "Project5/leftPaperHand.jpg"
             lefthand.src= "Project5/rightRockHand.jpg"
         
@@ -125,18 +108,14 @@
                 var computerChoice= Math.random()
                 
                 if (a=='Rrock') {
-                
                     righthand.src= "Project5/leftRockHand.jpg"
-                
                 }
                     
                 else if (a=='Rpaper') {
-                
                     righthand.src= "Project5/leftPaperHand.jpg"
-                
                 }
-                else if (a=='Rscissors') {
                 
+                else if (a=='Rscissors') {
                     righthand.src= "Project5/leftScissorHand.jpg"
                 }
                 
@@ -144,31 +123,22 @@
                     lefthand.src= "Project5/rightRockHand.jpg"
                     computerChoice="rock"
                 }
+                
                 else if (computerChoice >=0.33 & computerChoice <0.66) {
                     lefthand.src= "Project5/rightPaperHand.jpg"
                     computerChoice="paper"
                 }
+                
                 else {
                     lefthand.src= "Project5/rightScissorHand.jpg"
                     computerChoice="scissors"
                 }
-                
-                
+
                 var p = status(a, computerChoice)
                 stuff(p)
-                
-                
-                
-                
+ 
             }
-            
-
-            
-            
-            
-            
-            
-            
+       
         </script>
     </body>
 </html>
